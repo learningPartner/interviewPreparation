@@ -1,0 +1,14 @@
+<ul>
+    @for (item of cityList; track $index) {
+        <li>{{item}}</li>
+    }
+</ul>
+
+<ul>
+    @for (item of cityData; track $index) {
+        <li>{{item}}</li>
+    }
+</ul>
+
+{{isRender()}}
+<button (click)="showAlert()">show</button>
