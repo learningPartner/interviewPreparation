@@ -2,4 +2,34 @@
     <div class="col-3">
         <input type="text" [formControl]="searchControl" class="form-control" placeholder="serch"/>
     </div>
+    <div class="col-3">
+        <input type="text" [formControl]="userIdFilter" class="form-control" placeholder="Gte User By Id"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-2">
+        <button class="btn btn-success" #loginBtn>Login</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <select [formControl]="stateFilter">
+            <option value="">Select</option>
+            <option value="MAH">MAH</option>
+            <option value="GOA">GOA</option>
+            <option value="Punjab">Punjab</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select [formControl]="cityFilter">
+            <option value="">Select</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Panji">Panji</option>
+            <option value="Ludhiyana">Ludhiyana</option>
+        </select>
+    </div>
 </div>

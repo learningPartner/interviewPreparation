@@ -1,18 +1,25 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../../service/product.service';
-import { concatMap, debounce, debounceTime, delay, distinctUntilChanged, from, mergeMap, of, switchMap } from 'rxjs';
+import { combineLatest, combineLatestAll, combineLatestWith, concatMap, debounce, debounceTime, delay, distinctUntilChanged, exhaustMap, filter, forkJoin, from, fromEvent, interval, mergeMap, Observable, of, switchMap, take } from 'rxjs';
+import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
 @Component({
   selector: 'app-rxjs-operator',
   imports: [FormsModule,ReactiveFormsModule],
   templateUrl: './rxjs-operator.component.html',
   styleUrl: './rxjs-operator.component.css'
 })
-export class RxjsOperatorComponent implements OnInit {
+export class RxjsOperatorComponent implements OnInit ,AfterViewInit{
 
   
   producSrv = inject(ProductService);
   searchControl: FormControl = new FormControl("");
+  stateFilter: FormControl = new FormControl("");
+  cityFilter: FormControl = new FormControl("");
+
+  userIdFilter : FormControl = new FormControl("");
+  @ViewChild("loginBtn") loginBtn! : ElementRef;
+
   constructor() {
     // this.searchControl.valueChanges.subscribe((res)=>{
     //   if(res.length >3) {
@@ -21,9 +28,15 @@ export class RxjsOperatorComponent implements OnInit {
     //     })
     //   } 
     // })
+    this.userIdFilter.valueChanges.subscribe((res:number)=>{
+      this.producSrv.getCacheUserId(res).subscribe((Res:any)=>{
+        debugger;
+      })
+    })
     this.searchControl.valueChanges.pipe(
       debounceTime(10),
       distinctUntilChanged(),
+      filter((searchText: string)=> searchText.length >=3),
       switchMap((searchText)=> this.producSrv.searchProduct(searchText))
     ).subscribe((result)=>{
       console.log("data receioeve")
@@ -37,14 +50,65 @@ export class RxjsOperatorComponent implements OnInit {
     // this.userId$.pipe(
     //   mergeMap(res=> this.getUserDetail(res))
     // ).subscribe((res:any)=>{
-    //   debugger;
+    //   
     // })
+    const myTimeInterval =  interval(1000);
+    myTimeInterval.pipe(
+      take(3)
+    ).subscribe((res)=>{
+      console.log("Interval" + res);
+    })
+
     this.userId2$.pipe(
       concatMap(res=> this.getUserDetail(res))
-    ).subscribe((res:any)=>{
-      debugger;
+    ).subscribe((res:any)=>{ 
     })
     this.getUsers();
+    this.getDashboardData() 
+    this.getSerachFilter();
+
+    const obs$ = from([interval(1000).pipe(take(2)), interval(1500).pipe(take(2))]);
+    obs$.pipe(
+      combineLatestAll()
+    ).subscribe((res)=>{
+      
+    });
+    this.getTestData()
+  }
+
+  getTestData() {
+    this.producSrv.getTestById().subscribe((Res:any)=>{
+      
+    })
+  }
+
+  getSerachFilter() {
+    const stateFilter$ =  this.stateFilter.valueChanges;
+    const cityFilter$ =  this.cityFilter.valueChanges;
+    combineLatestWith
+    combineLatest([stateFilter$,cityFilter$]).subscribe((res:any)=>{
+      
+    })
+  }
+
+  ngAfterViewInit(): void {
+    
+    fromEvent(this.loginBtn.nativeElement,'click').pipe
+    (
+      exhaustMap(()=>{
+        
+        const obj = {uName:'test',uPwd:'11223'};
+        return this.login(obj.uName,obj.uPwd)
+      })
+    ).subscribe((res:any)=>{
+      
+    })
+  }
+  login(uName: string,pwd: string) : Observable<any> {
+    console.log("login login")
+    return of({userId:123,uName:'test',uPwd:'11223'}).pipe(
+      delay(5000)
+    )
   }
 
   getUserDetail(id: number) {
@@ -64,7 +128,16 @@ export class RxjsOperatorComponent implements OnInit {
     this.producSrv.getUsers().pipe(
       mergeMap((res:any)=> this.producSrv.getUserById(res[0].id))
     ).subscribe((result)=>{
-      debugger;
+      
+    })
+  }
+
+  getDashboardData() {
+    const user$ = this.producSrv.getUsers();
+    const posts$ =  this.producSrv.getPosts();
+
+    forkJoin([user$,posts$]).subscribe((res:any)=>{
+      
     })
   }
 }
