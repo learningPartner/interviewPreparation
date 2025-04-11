@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChnageDetectionComponent } from "./pages/chnage-detection/chnage-detection.component";
 import { RxjsOperatorComponent } from "./pages/rxjs-operator/rxjs-operator.component";
+import { ViewChildContentComponent } from "./pages/view-child-content/view-child-content.component";
+import { MyButtonComponent } from './reusaabe/my-button/my-button.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ChnageDetectionComponent, RxjsOperatorComponent],
+  imports: [MyButtonComponent, ViewChildContentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
