@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, input, OnInit } from '@angular/core';
+import { ProductService } from '../../service/product.service';
 
 @Component({
   selector: 'app-chnage-detection',
@@ -14,8 +15,12 @@ export class ChnageDetectionComponent implements OnInit{
 
   cityList:string[] = [];
 
-  constructor(private changeDetectionRef:ChangeDetectorRef) {
+  constructor(private changeDetectionRef:ChangeDetectorRef,private prod: ProductService) {
 
+  }
+
+  addVale() {
+    this.prod.data.name = "Angular";
   }
 
   ngOnInit(): void {

@@ -8,14 +8,11 @@ import { Component, ContentChild, ElementRef } from '@angular/core';
 })
 export class MyButtonComponent {
 
-  @ContentChild('icon') iconEle! : ElementRef;
-  
-
+  @ContentChild('icon') iconEle! : ElementRef; 
   constructor() {
     setTimeout(() => {
       debugger;
       const ss = this.iconEle.nativeElement.innerText;
     }, 6000);
-  }
-
+  } 
 }

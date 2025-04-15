@@ -8,8 +8,10 @@ import { map, Observable, shareReplay, tap } from 'rxjs';
 export class ProductService {
 
   testOriginalData: any;
+  data: any = {}
 
   private userDetailCache = new Map<number, Observable<any>>();
+ 
   
   constructor(private http: HttpClient) { }
 

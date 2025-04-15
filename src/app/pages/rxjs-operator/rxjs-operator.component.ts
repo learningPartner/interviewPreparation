@@ -20,7 +20,7 @@ export class RxjsOperatorComponent implements OnInit ,AfterViewInit{
   userIdFilter : FormControl = new FormControl("");
   @ViewChild("loginBtn") loginBtn! : ElementRef;
 
-  constructor() {
+  constructor(private prodSrv: ProductService) {
     // this.searchControl.valueChanges.subscribe((res)=>{
     //   if(res.length >3) {
     //     this.producSrv.searchProduct(res).subscribe((res)=>{
@@ -28,6 +28,10 @@ export class RxjsOperatorComponent implements OnInit ,AfterViewInit{
     //     })
     //   } 
     // })
+    setTimeout(() => {
+      const data =this.prodSrv.data;
+      debugger;
+    }, 10000);
     this.userIdFilter.valueChanges.subscribe((res:number)=>{
       this.producSrv.getCacheUserId(res).subscribe((Res:any)=>{
         debugger;

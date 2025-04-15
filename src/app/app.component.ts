@@ -4,10 +4,11 @@ import { ChnageDetectionComponent } from "./pages/chnage-detection/chnage-detect
 import { RxjsOperatorComponent } from "./pages/rxjs-operator/rxjs-operator.component";
 import { ViewChildContentComponent } from "./pages/view-child-content/view-child-content.component";
 import { MyButtonComponent } from './reusaabe/my-button/my-button.component';
+import { NgContanierTempComponent } from "./pages/ng-contanier-temp/ng-contanier-temp.component";
 
 @Component({
   selector: 'app-root',
-  imports: [MyButtonComponent, ViewChildContentComponent],
+  imports: [MyButtonComponent, ViewChildContentComponent, NgContanierTempComponent, ChnageDetectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
