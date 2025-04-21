@@ -1,0 +1,199 @@
+<div class="container">
+    <div class="row">  
+       <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Angular Lifecycle Hooks
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            Angular components and directives have a series of lifecycle phases from creation to destruction.
+                             Lifecycle hooks are special methods that allow you to write code onto these phases to execute custom logic.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngOnChanges
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <ul>
+                                <li>Invoked when any data-bound input property changes.</li>
+                                <li > Reacting to changes in &#64;Input() properties</li>
+                            </ul>
+                            <app-code-block [code]="ngOnChange"></app-code-block> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngOnInit
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <ul>
+                                <li> Called once after the first ngOnChanges().</li>
+                                <li > Initializing component properties, fetching data, or setting up subscriptions.​</li>
+                            </ul>
+
+                            <button (click)="updateUser()">change</button>
+                            <app-my-button [user]="user"></app-my-button>
+                            <app-code-block [code]="ngOnChange"></app-code-block> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngDoCheck 
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <p>
+                                The ngDoCheck lifecycle hook in Angular is a powerful tool for implementing custom change detection logic, especially when Angular's default change detection doesn't suffice.
+                            </p>
+                            <p>
+                                Means Lets say you have a resusable component with input and you are getting object in that Input now in preant component if you change variabel value which yiur passing as Input you ngOnCHnages 
+                                in Child component will execute but if you just chnaged one field value in parent
+                                 component you ngOnchange won't execute in that case you can detect chnages in ngDoCheck
+                            </p>
+                            <div class="row">
+                                <div class="col-8">
+                                    Child 
+                                    <app-code-block [code]="ngdoch"></app-code-block> 
+                                </div>
+                                <div class="col-4">
+                                    parent
+                                    <app-code-block [code]="ngdoch2"></app-code-block> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    in case of this ngOnChnage in MyButtonComponent component won't execute
+                                    <app-code-block [code]="ngdoch3"></app-code-block> 
+                                </div>
+                                <div class="col-6">
+                                    in case of this ngOnChnage in MyButtonComponent component will execute
+                                    <app-code-block [code]="ngdoch4"></app-code-block> 
+                                </div>
+                            </div>
+
+                            <button (click)="updateUser()">change</button>
+                            <app-my-button [user]="user"></app-my-button>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngAfterContentInit
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <ul>
+                                <li> Called after Angular projects external content into the component's view.</li>
+                                <li > Accessing projected content using  ContentChild() or ContentChildren()​</li>
+                            </ul>
+ 
+                            <app-code-block [code]="ngcont1"></app-code-block> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngAfterContentChecked
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <ul>
+                                <li>  Called after every check of projected content.</li>
+                                <li >Responding to changes in projected content.​</li>
+                            </ul>
+ 
+                            <app-code-block [code]="ngcontent2"></app-code-block> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngAfterViewInit
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <ul>
+                                <li> Called after Angular initializes the component's views and child views.</li>
+                                <li > Accessing ViewChild() or ViewChildren() properties.​</li>
+                                <li>or DOM Interactions: Access and manipulate DOM elements only after the view has been initialized</li>
+                            </ul>
+ 
+                            <app-code-block [code]="ngviewini"></app-code-block> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngAfterViewChecked
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <ul>
+                                <li> Called after every check of the component's views and child views.</li>
+                                <li >Responding to changes in the component's view.​</li>
+                            </ul>
+ 
+                            <app-code-block [code]="ngviewch"></app-code-block> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    ngOnDestroy
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                            <ul>
+                                <li> Cleanup just before Angular destroys the component</li>
+                                <li >Unsubscribing from observables, detaching event handlers, or other cleanup tasks.​​</li>
+                            </ul>
+ 
+                            <app-code-block [code]="ngDest"></app-code-block> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

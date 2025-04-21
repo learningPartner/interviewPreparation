@@ -8,7 +8,7 @@ import { NgContanierTempComponent } from "./pages/ng-contanier-temp/ng-contanier
 
 @Component({
   selector: 'app-root',
-  imports: [MyButtonComponent, ViewChildContentComponent, NgContanierTempComponent, ChnageDetectionComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

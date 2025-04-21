@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+pre {
+    font-family: 'Monaco', 'Consolas', monospace;
+    border-radius: 8px;
+    background-color: var(--pre-bg) !important;
+    color: var(--pre-color) !important; 
+    font-size: 74.5%;
+    width: 100% !important;
+    width: max-content;
+    padding: 5px;
+    overflow-x: auto;
+    color: #ffff !important;
+    background-color: #000 !important;
+}

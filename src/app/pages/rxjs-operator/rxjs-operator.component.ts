@@ -3,15 +3,18 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../../service/product.service';
 import { combineLatest, combineLatestAll, combineLatestWith, concatMap, debounce, debounceTime, delay, distinctUntilChanged, exhaustMap, filter, forkJoin, from, fromEvent, interval, mergeMap, Observable, of, switchMap, take } from 'rxjs';
 import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
+import { CodeBlockComponent } from "../../reusaabe/code-block/code-block.component";
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-rxjs-operator',
-  imports: [FormsModule,ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, CodeBlockComponent,CommonModule ],
   templateUrl: './rxjs-operator.component.html',
   styleUrl: './rxjs-operator.component.css'
 })
 export class RxjsOperatorComponent implements OnInit ,AfterViewInit{
 
-  
+  inputCode = `<input type="text" [formControl]="searchControl" class="form-control" placeholder="search" />`;
+
   producSrv = inject(ProductService);
   searchControl: FormControl = new FormControl("");
   stateFilter: FormControl = new FormControl("");
