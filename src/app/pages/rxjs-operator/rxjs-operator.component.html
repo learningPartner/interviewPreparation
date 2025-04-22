@@ -1,19 +1,124 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">  
        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
             <div class="card">
                 <div class="card-header bg-secondary">
-                    Debouncing
+                    Debouncing Using Rxjs Operator
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6"> 
+                            in.ts
+                            <app-code-block [code]="debound"></app-code-block> 
+                        </div>
+                        <div class="col-6"> 
+                            in.html
+                            <app-code-block [code]="text"></app-code-block> 
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li> debounceTime => it will wait for perticular time the it will execute</li>
+                                <li> distinctUntilChanged=> it will check if old value is same or not - in case of copy paste we can have same value pasted again so it should not trigger api call</li>
+                                <li> switchMap => if existing api call going on & before response came another api call trigger it will cancel previous api call</li>
+                                <li>filter => it's checking if min 3 char is there then only it will trigger api call</li>
+                            </ul> 
+                            <app-code-block [code]="docuContr2"></app-code-block> 
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Various ways to create observables
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6">
-                             
-                            <app-code-block [code]="inputCode"></app-code-block>
-                            
-                            
+                            <app-code-block [code]="ofobs"></app-code-block> 
+                        </div> 
+                        <div class="col-6">
+                            <span>Here we get City Array</span>
+                            <app-code-block [code]="ofsub"></app-code-block> 
                         </div>
-                    </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="fromobs"></app-code-block> 
+                        </div> 
+                        <div class="col-6">
+                            <span>Here Subbscribe block will execute for every element in array, each time we will get single element like for loop</span>
+                            <app-code-block [code]="fromobssub"></app-code-block> 
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-6">
+                            this is like setInterval from javaScript, if will emit data after 1 sec
+                            <app-code-block [code]="intervlstr"></app-code-block> 
+                        </div> 
+                        <div class="col-6">
+                            <span>subscribe will execuite after 1 sec</span>
+                            <app-code-block [code]="intersubstr"></app-code-block> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    takeUntil operator
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-6">
+                             we create inverval and another observable
+                            <app-code-block [code]="takeuntillstr"></app-code-block> 
+                        </div> 
+                        <div class="col-6">
+                            <span>after 5 sec we are emiting another obserable so interval will stop after that</span>
+                            <app-code-block [code]="untilsubStr"></app-code-block> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   combine Multple observable=> forkJoin, mergeMap
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-6"> 
+                            <app-code-block [code]="forkObsStr"></app-code-block> 
+                            <app-code-block [code]="forkSubStr"></app-code-block> 
+                        </div> 
+                        <div class="col-6"> 
+                            <app-code-block [code]="meprMapStr"></app-code-block> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    combineLatest, combineLatestWith
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-6"> 
+                            <app-code-block [code]="combLatStr"></app-code-block> 
+                            <app-code-block [code]="combGHtlStr"></app-code-block> 
+                        </div> 
+                        <div class="col-6"> 
+                            <app-code-block [code]="combLateSubStr"></app-code-block> 
+                            <app-code-block [code]="comblatewith"></app-code-block> 
+                            <p>Both will Behave same</p>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>
