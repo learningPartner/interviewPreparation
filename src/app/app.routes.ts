@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LifeCycleComponent } from './pages/life-cycle/life-cycle.component';
 import { ViewEncapComponent } from './pages/view-encap/view-encap.component';
+import { ProxyComponent } from './pages/proxy/proxy.component';
 
 export const routes: Routes = [
     {
@@ -10,5 +11,9 @@ export const routes: Routes = [
     {
         path:"view-encap",
         component:ViewEncapComponent
+    },
+    {
+        path:"proxy",
+        component:ProxyComponent
     }
 ];

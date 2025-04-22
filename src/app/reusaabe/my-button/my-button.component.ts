@@ -11,14 +11,12 @@ export class MyButtonComponent implements DoCheck,OnChanges {
   private differ!: KeyValueDiffer<string, any>;
 
   constructor(private differs: KeyValueDiffers) {
-    setTimeout(() => {
-      debugger;
+    setTimeout(() => { 
       const ss = this.iconEle.nativeElement.innerText;
     }, 6000);
   } 
 
-  ngOnChanges(changes: SimpleChanges): void {
-    debugger;
+  ngOnChanges(changes: SimpleChanges): void { 
   }
   ngOnInit() {
     if(this.differ) {
@@ -26,8 +24,7 @@ export class MyButtonComponent implements DoCheck,OnChanges {
     }
   }
 
-  ngDoCheck() {
-    debugger;
+  ngDoCheck() { 
     if(this.differ) {
       const changes = this.differ.diff(this.user);
       if (changes) {

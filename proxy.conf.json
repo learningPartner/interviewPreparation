@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://localhost:4200/assets/mock",
+    "pathRewrite": {
+      "^/api": "/users.json"
+    },
+    "secure": false,
+    "changeOrigin": true
+  }
+}

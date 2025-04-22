@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row">  
+       <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary title">
+                    how to create a proxy to solve CORS
+                </div>
+                <div class="card-body">
+                    <p>
+                        Browsers enforce the Same-Origin Policy, which restricts web pages from making requests to a different domain than the one that served the web page. This policy enhances security but can lead to CORS errors when your frontend application tries to access resources from a different origi
+                    </p>
+                    <p>To bypass CORS restrictions, you can set up a proxy server that acts as an intermediary between your frontend application and the external API. Since CORS policies are enforced by browsers and not servers, the proxy server can make requests to the external API and relay the responses back to the frontend.</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h6>In the root directory of your Angular project</h6>
+                            <p>create a file named proxy.conf.json.</p>
+                            <app-code-block [code]="proxy"></app-code-block> 
+                        </div>
+                        <div class="col-6">
+                            <h6>Configure Angular to Use the Proxy</h6>
+                            <p>In your angular.json file</p>
+                            <app-code-block [code]="pxoxy2"></app-code-block> 
+                        </div>
+                        <div class="col-6">
+                            <h6>Update API Calls Url from this</h6> 
+                            <div class="row"> 
+                                <div class="col-12">
+                                    <app-code-block [code]="new"></app-code-block> 
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <div class="col-6">
+                            <h6>to This</h6> 
+                            <div class="row"> 
+                                <div class="col-12">
+                                    <app-code-block [code]="new"></app-code-block> 
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary title">
+                    polyfills 
+                </div>
+                <div class="card-body">
+                    <p>
+                        polyfills are scripts that add support for features that are not natively available in all browsers. They essentially "fill in the gaps" to ensure your Angular app works consistently across different environments.
+                    </p>
+                    <ul>
+                        <li>Different browsers support different features of JavaScript and web APIs. For example:</li>
+                        <li>Modern browsers support ES6+ features.</li>
+                        <li>Older versions (like Internet Explorer 11) do not.</li>
+                    </ul>
+                    <p>Polyfills help bridge this gap by emulating modern features in older browsers.</p>
+                    <div class="row">
+                        <div class="col-4">
+                            <p>Array.includes() </p>
+                            <pre>
+const isValid = [1, 2, 3].includes(2);
+                            </pre>
+                            This works fine in Chrome, Firefox, Edge, etc. But in Internet Explorer, it throws an error:
+                        </div>
+                        <div class="col-4">
+                           solution =>  in polyfills.ts 
+                            <pre>
+import 'core-js/es/array/includes';
+                            </pre>
+                            now it works in IE alos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
