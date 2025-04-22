@@ -21,17 +21,22 @@ export class MyButtonComponent implements DoCheck,OnChanges {
     debugger;
   }
   ngOnInit() {
+    if(this.differ) {
     this.differ = this.differs.find(this.user).create();
+    }
   }
 
   ngDoCheck() {
     debugger;
-    const changes = this.differ.diff(this.user);
-    if (changes) {
-      changes.forEachChangedItem((item:any) => {
-        console.log(`Property ${item.key} changed from ${item.previousValue} to ${item.currentValue}`);
-      });
+    if(this.differ) {
+      const changes = this.differ.diff(this.user);
+      if (changes) {
+        changes.forEachChangedItem((item:any) => {
+          console.log(`Property ${item.key} changed from ${item.previousValue} to ${item.currentValue}`);
+        });
+      }
     }
+    
   }
   @ContentChild('icon') iconEle! : ElementRef; 
   

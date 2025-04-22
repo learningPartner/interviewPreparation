@@ -21,6 +21,26 @@ export class AppComponent  implements OnInit{
     setTimeout(() => {
       this.cityData = ["Jaipur","Jodhpur"];
     }, 6000);
+    window.addEventListener("message", (event) => {
+      if (event.data && event.data.type === "THEME_CHANGE") {
+        this.applyTheme(event.data.theme);
+      }
+    });
+  
+    // Optionally apply saved theme initially
+    const savedTheme = localStorage.getItem("theme") || "light";
+    this.applyTheme(savedTheme);
+  }
+
+  applyTheme(theme: string) {
+    const body = document.body;
+    if (theme === "dark") {
+      body.classList.add("dark-theme");
+    } else {
+      body.classList.remove("dark-theme");
+    }
+  
+    localStorage.setItem("theme", theme); // optional, if you want to persist
   }
 
   setTitle() {

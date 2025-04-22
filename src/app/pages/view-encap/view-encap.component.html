@@ -1,0 +1,153 @@
+<div class="container-fluid">
+    <div class="row">  
+       <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary title">
+                    View Encapsulation
+                </div>
+                <div class="card-body">
+                    <app-my-button>Button</app-my-button>
+                    <div class="row">
+                        <div class="col-12"> 
+                           <p> View Encapsulation determines how styles defined in a component affect the component's template and whether they can influence or be influenced by styles outside the component. </p>
+                           <p> This mechanism ensures that styles are scoped appropriately, preventing unintended side effects across components.​</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What Is Shadow DOM
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                          <p>
+                            Shadow DOM is a web standard that enables encapsulation of a component's internal structure and styling, ensuring that its internal DOM and CSS are isolated from the rest of the document. </p>
+                            <p>This means styles defined within a Shadow DOM do not affect the main document, and vice versa.​ </p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    encapsulation: ViewEncapsulation.Emulated (Default)
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12"> 
+                          <p>
+                            In Emulated mode, Angular simulates the behavior of the Shadow DOM by modifying the component's styles and template during compilation. It does this by:​ </p>
+                            <ul>
+                                <li>
+                                    <strong>Adding Unique Attributes to Elements</strong>  Angular appends unique attributes to the component's HTML elements. These attributes are typically in the form of _ngcontent-xyz, where xyz is a unique identifier.​
+                                </li>
+                                <li>
+                                    <strong>Modifying CSS Selectors:Angular updates the component's CSS selectors to target these unique attributes, ensuring that the styles apply only to the elements within the component.​</strong>
+                                </li>
+                            </ul>
+                            <hr>
+                            <h6>To Test This</h6>
+                            <ul>
+                                <li>Create a reusable component, lets say Button component have a class added title on button </li>
+                                <li>now in parent component create a class title with some color</li>
+                                <li>in emulated case - title class wont get applied to button component</li>
+                                <li>in none case title class from parent component n will get applied to child component as well</li>
+                                <li>it means it will limit css within that component only</li>
+                            </ul>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    encapsulation: ViewEncapsulation.None
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">  
+                            <ul>
+                                <li>
+                                    No encapsulation; styles are applied globally and can affect other components.
+                                </li>
+                                
+                            </ul>
+                            <hr>
+                            <h6>To Test This</h6>
+                            <ul>
+                                <li>Create a reusable component, lets say Button component have a class added title on button </li>
+                                <li>now in parent component create a class title with some color</li> 
+                                <li>in none case title class from parent component n will get applied to child component as well</li>
+                                <li>it means it will limit css within that component only</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    encapsulation: ViewEncapsulation.ShadowDom
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">  
+                            <ul>
+                                <li>
+                                    Utilizes the browser's native Shadow DOM to encapsulate styles, providing true style isolation
+                                </li>
+                                <li>
+                                    it won;t use any bootstrap or any global css as well, only css which are present in component
+                                </li> 
+                            </ul>
+                            <hr>
+                            <h6>To Test This</h6>
+                            <ul>
+                                <li>Create a reusable component, lets say Button component have a class added title on button </li>
+                                <li>now in parent component create a class title with some color</li> 
+                                <li>in none case title class from parent component n will get applied to child component as well</li>
+                                <li>it means it will limit css within that component only</li>
+                            </ul>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Real-Time Scenario
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">  
+                            <ul>
+                                <li>
+                                   <strong>EmulatedComponent:</strong>  Uses ViewEncapsulation.Emulated to ensure its styles don't leak out.
+                                </li>
+                                <li>
+                                    <strong>ShadowDomComponent:</strong>  Uses ViewEncapsulation.ShadowDom for true style isolation.
+                                 </li>
+                                 <li>
+                                    <strong>NoneComponent:</strong>  Uses ViewEncapsulation.None, allowing its styles to affect other components.
+                                 </li>
+                            </ul>
+                            <hr> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
