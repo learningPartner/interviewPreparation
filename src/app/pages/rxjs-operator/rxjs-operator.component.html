@@ -87,6 +87,41 @@
         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
             <div class="card">
                 <div class="card-header bg-secondary">
+                    take (number)
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-6">
+                             create a interval which emits value after 1 sec
+                            <app-code-block [code]="timetTak"></app-code-block> 
+                        </div> 
+                        <div class="col-6">
+                            <span>here we use take so after 3rd it will stop receiving data, its like unsubscribe</span>
+                            <app-code-block [code]="timestrsub"></app-code-block> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   delay
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-6">
+                            just Like setTimeout
+                            <app-code-block [code]="deltystr"></app-code-block> 
+                        </div> 
+                        
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
                    combine Multple observable=> forkJoin, mergeMap
                 </div>
                 <div class="card-body"> 

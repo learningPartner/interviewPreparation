@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
-import { filter, map, of } from 'rxjs';
+import { BehaviorSubject, filter, map, of, Subject } from 'rxjs';
 import { CodeBlockComponent } from "../../reusaabe/code-block/code-block.component";
 
 @Component({
@@ -35,9 +35,47 @@ getsuer2str =`getUsers2() {
   })
 }`
 
+  userName$ = new Subject<string>;
+  fullName$  =  new Subject<void>;
+  lastName : Subject<string> = new Subject<string>;
+  middleName = new Subject<string>();
+
+  subStr=`userName$ = new Subject<string>;
+fullName$ =  new Subject<void> => when No data Emit;
+lastName : Subject<string> = new Subject<string>;;
+middleName = new Subject<string>();
+If you Try to Initialize
+middleName = new Subject<string>("Demo") => Error Expected 0 arguments, but got 1;`
+  subEmitStr=`this.lastName.next("Jogi");
+this.userName$.next("chetan11");`
+subSubStr=`this.lastName.subscribe((value:string)=>{
+  console.log(value)
+})`;
+
+  courseName = new BehaviorSubject<string>("Angular");
+  courseFees$ = new BehaviorSubject<number>(1200); 
+
+  behaStr=`courseName = new BehaviorSubject<string>("Angular");
+courseFees$ = new BehaviorSubject<number>(1200);`
+  behSubStr=`this.courseName.next("React");
+this.courseName.subscribe((value:string)=>{
+  console.log(value)
+})`
+
   ngOnInit(): void {
     this.getUsers();
     this.filterStudent();
+    debugger
+    this.lastName.next("Jogi");
+    this.userName$.next("chetan11");
+    this.courseName.next("React");
+
+    this.courseName.subscribe((value:string)=>{
+      console.log(value)
+    })
+    this.lastName.subscribe((value:string)=>{
+      console.log(value)
+    })
   }
 
   getUsers() {

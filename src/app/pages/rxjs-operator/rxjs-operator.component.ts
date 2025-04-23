@@ -86,7 +86,21 @@ untilsubStr=`this.timeInterval$.pipe(
     this.stopInterval$.next();
   }
 })`
+timerInterval = interval(1000);
+timetTak =`timerInterval = interval(1000);`
+timestrsub=`this.timerInterval.pipe(
+  take(3)
+).subscribe((timer:number)=>{
+  console.log(timer)
+})`
+
   constructor(private prodSrv: ProductService,private http: HttpClient) {
+
+    this.timerInterval.pipe(
+      take(3)
+    ).subscribe((timer:number)=>{
+      console.log(timer)
+    })
     this.cityList$.subscribe((res:string[])=>{
      
       console.log(res)
@@ -96,7 +110,7 @@ untilsubStr=`this.timeInterval$.pipe(
       console.log(res)
     })
     this.timeInterval$.subscribe((res:number)=>{
-      //debugger;
+      //
       console.log(res)
     })
     
@@ -128,11 +142,11 @@ untilsubStr=`this.timeInterval$.pipe(
     // })
     setTimeout(() => {
       const data =this.prodSrv.data;
-     // debugger;
+     // 
     }, 10000);
     this.userIdFilter.valueChanges.subscribe((res:number)=>{
       this.producSrv.getCacheUserId(res).subscribe((Res:any)=>{
-        //debugger;
+        //
       })
     })
     this.searchControl.valueChanges.pipe(
@@ -160,7 +174,7 @@ mpCityArray = of(['Bhopal','Indore'])
   ngOnInit(): void {
 
     forkJoin([this.mhCityArray,this.mpCityArray]).subscribe((result:any)=>{
-      debugger;
+      
       console.log(result[0])
       console.log(result[1])
     })
@@ -216,12 +230,12 @@ comblatewith =`stateFilter$.pipe(
     stateFilter$.pipe(
       combineLatestWith(cityFilter$)
     ).subscribe((result:any)=>{
-      debugger;
+      
       
     })
    // combineLatestWith
     combineLatest([stateFilter$,cityFilter$]).subscribe((res:any)=>{
-      debugger;
+      
     })
   }
 
@@ -238,6 +252,12 @@ comblatewith =`stateFilter$.pipe(
       
     })
   }
+  deltystr=`login(uName: string,pwd: string) : Observable<any> {
+  console.log("login login")
+  return of({userId:123,uName:'test',uPwd:'11223'}).pipe(
+    delay(5000)
+  )
+}`
   login(uName: string,pwd: string) : Observable<any> {
     console.log("login login")
     return of({userId:123,uName:'test',uPwd:'11223'}).pipe(
