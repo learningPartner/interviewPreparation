@@ -3,6 +3,7 @@ import { LifeCycleComponent } from './pages/life-cycle/life-cycle.component';
 import { ViewEncapComponent } from './pages/view-encap/view-encap.component';
 import { ProxyComponent } from './pages/proxy/proxy.component';
 import { RxjsOperatorComponent } from './pages/rxjs-operator/rxjs-operator.component';
+import { SubBehMapComponent } from './pages/sub-beh-map/sub-beh-map.component';
 
 export const routes: Routes = [
     {
@@ -18,7 +19,11 @@ export const routes: Routes = [
         component:ProxyComponent
     }, 
     {
-        path:"rxjs",
+        path:"rxjs-operator",
         component:RxjsOperatorComponent
+    }, 
+    {
+        path:"rxjs-sub-beh-map",
+        component:SubBehMapComponent
     }
 ];

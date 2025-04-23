@@ -7,7 +7,7 @@ import { map, Observable, shareReplay, tap } from 'rxjs';
 })
 export class ProductService {
 
-  testOriginalData: any;
+  originalData: any;
   data: any = {}
 
   private userDetailCache = new Map<number, Observable<any>>();
@@ -46,13 +46,13 @@ export class ProductService {
 
 
   getTestById() {
-   return this.http.get("https://projectapi.gerasim.in/api/SoilTest/GetTestById?id=1").pipe(
-    tap((response)=>{
-      debugger;
-      this.testOriginalData =  response;
-    }),
-    map((result:any)=> result.fddMeasurements)
-   
-  )
+    return this.http.get("https://projectapi.gerasim.in/api/SoilTest/GetTestById?id=1").pipe(
+      tap((response) => {
+        //here we catch original data
+        this.originalData = response;
+      }),
+      //then we modify data and send it back to subscriber
+      map((result: any) => result.fddMeasurements)
+    )
   }
 }
