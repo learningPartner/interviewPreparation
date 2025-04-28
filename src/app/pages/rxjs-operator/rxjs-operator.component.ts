@@ -123,9 +123,9 @@ timestrsub=`this.timerInterval.pipe(
       }
     })
       this.searchControl.valueChanges.pipe(
-        debounceTime(10),
-        distinctUntilChanged(),
-        filter((search:string)=> search.trim().length>3),
+        debounceTime(300),
+       // distinctUntilChanged(),
+        //filter((search:string)=> search.trim().length>3),
         switchMap((res:string)=> this.http.get("https://jsonplaceholder.typicode.com/users?search="+res))
       ).subscribe((res:any)=>{
         
@@ -149,14 +149,14 @@ timestrsub=`this.timerInterval.pipe(
         //
       })
     })
-    this.searchControl.valueChanges.pipe(
-      debounceTime(10),
-      distinctUntilChanged(),
-      filter((searchText: string)=> searchText.length >=3),
-      switchMap((searchText)=> this.producSrv.searchProduct(searchText))
-    ).subscribe((result)=>{
-      console.log("data receioeve")
-    })
+    // this.searchControl.valueChanges.pipe(
+    //   debounceTime(10),
+    //   distinctUntilChanged(),
+    //   filter((searchText: string)=> searchText.length >=3),
+    //   switchMap((searchText)=> this.producSrv.searchProduct(searchText))
+    // ).subscribe((result)=>{
+    //   console.log("data receioeve")
+    // })
   }
   
   userId$ =  from([1,2,3]);

@@ -4,6 +4,7 @@ import { ViewEncapComponent } from './pages/view-encap/view-encap.component';
 import { ProxyComponent } from './pages/proxy/proxy.component';
 import { RxjsOperatorComponent } from './pages/rxjs-operator/rxjs-operator.component';
 import { SubBehMapComponent } from './pages/sub-beh-map/sub-beh-map.component';
+import { TopicTestComponent } from './pages/topic-test/topic-test.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path:"rxjs-sub-beh-map",
         component:SubBehMapComponent
+    }, 
+    {
+        path:"test-topic",
+        component:TopicTestComponent
     }
 ];
