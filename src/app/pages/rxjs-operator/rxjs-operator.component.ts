@@ -128,8 +128,15 @@ timestrsub=`this.timerInterval.pipe(
         //filter((search:string)=> search.trim().length>3),
         switchMap((res:string)=> this.http.get("https://jsonplaceholder.typicode.com/users?search="+res))
       ).subscribe((res:any)=>{
-        
+        console.log("res")
       })
+
+      // this.searchControl.valueChanges.subscribe((res=> {
+      //   debugger;
+      //   this.http.get("https://jsonplaceholder.typicode.com/users?search="+res).subscribe((rs:any)=>{
+
+      //   })
+      // }))
 
 
 

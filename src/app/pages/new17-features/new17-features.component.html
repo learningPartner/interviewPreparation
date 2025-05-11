@@ -1,0 +1,312 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Deferrable Views
+                </div>
+                <div class="card-body">
+                    <p>
+                        a new way to delay or defer the rendering of parts of your template until certain conditions are
+                        met, such as:
+                    </p>
+                    <ul>
+                        <li>When the component is visible in the viewport</li>
+                        <li>when some event triggered</li>
+                        <li>After an idle period</li>
+                        <li>After a timeout</li>
+                        <li>this helps to => Speeding up initial load, Saving resources by not rendering offscreen
+                            content,Improving performance in large Angular apps</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-4">
+                            <app-code-block [code]="idleStr"></app-code-block>
+                        </div>
+                        <div class="col-4">
+                            <app-code-block [code]="interactSrt"></app-code-block>
+                        </div>
+                        <div class="col-4">
+                            <app-code-block [code]="viewportstr"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Control Flow Syntax
+                </div>
+                <div class="card-body">
+                    <p>
+                        a new way to delay or defer the rendering of parts of your template until certain conditions are
+                        met, such as:
+                    </p>
+                    <ul>
+                        <li>When the component is visible in the viewport</li>
+                        <li>when some event triggered</li>
+                        <li>After an idle period</li>
+                        <li>After a timeout</li>
+                        <li>this helps to => Speeding up initial load, Saving resources by not rendering offscreen
+                            content,Improving performance in large Angular apps</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-4">
+                            <app-code-block [code]="idleStr"></app-code-block>
+                        </div>
+                        <div class="col-4">
+                            <app-code-block [code]="interactSrt"></app-code-block>
+                        </div>
+                        <div class="col-4">
+                            <app-code-block [code]="viewportstr"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <span>&#64;</span>let declare variables directly within templates
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span>&#64;</span>let, was introduced to declare variables directly within templates. This
+                        enhances template logic and readability by allowing the creation of aliases for complex
+                        expressions or values that may be used multiple times.
+                    </p>
+                    <!-- <ul>
+                        @for (item of studentLst; track $index) {
+                            @let fullName = item.fname + ' '+item.lname;
+                            <li>
+                                {{fullName}}
+                            </li>
+                        }
+                        
+                    </ul> -->
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="studArr"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <app-code-block [code]="letstrfpor"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Function-Based Route Redirects
+                </div>
+                <div class="card-body">
+                    <p>
+                        in default route in earlier version we used to pass router name to redirect now it supports
+                        function as well
+                    </p>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <span>app.routes.ts</span>
+                            <app-code-block [code]="routerStr"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <span>utility.ts</span>
+                            <app-code-block [code]="redirfuncstr"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    computed signal
+                </div>
+                <div class="card-body">
+                    <p>
+                        you can pass a signal to chnage another signal value based on one signal value change, reactive
+                        signal it's value will depend on value chnage on signal we pass.
+                        We can't changed compoented signal value it will change if depedend value changes
+                    </p>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="computredTSr"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <p>doubleCount signal value will chnage after 5 sec</p>
+                            count => {{count()}} <br>
+                            doubleCount => {{doubleCount()}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Linked Signals
+                </div>
+                <div class="card-body">
+                    <p>
+                        linked signals are reactive variables that depend on other signals and update automatically when
+                        their dependencies change — like computed values.
+                    </p>
+                    <p>
+                        in source you can pass which signal we need to track if source changes then only it will compute
+                        again
+                    </p>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="linkestr1"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <p>total signal state value will chnage after 8 sec only as in source that value is there
+                            </p>
+                            total => {{total()}} <br>
+                            firstNum => {{firstNum()}}<br>
+                            secondNum => {{secondNum()}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Zoneless Change Detection
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>
+                                zoneless change detection mechanism that eliminates the need for zone.js, leading to
+                                improved performance and better debugging capabilities.
+                            </p>
+                            <p>
+                                means now you can disable change detection overall project
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <app-code-block [code]="chnagstr"></app-code-block>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    input signal
+                </div>
+                <div class="card-body">
+                    <p>
+                        let's say we created a reusable component and instaed of normal input , we can create a signal
+                        based input for more reactivity.
+                    </p>
+                    <div class="row">
+
+                        <div class="col-6">
+                            <app-code-block [code]="signipstr"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <app-code-block [code]="signtmepstr"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Reactive form control state change events
+                </div>
+                <div class="card-body">
+                    <p>
+                        Angular forms now expose a property called events, which allows you to subscribe to a stream of
+                        events for this form control.
+                    </p>
+                    <div class="row">
+
+                        <div class="col-6">
+                            <app-code-block [code]="reactEvemnstr"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <p>can track changes in value, touch state, pristine status, and the control status.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    resource api
+                </div>
+                <div class="card-body">
+                    <p>
+                        resource() is a new reactive way that helps manage asynchronous data (like HTTP calls, promises,
+                        or observables) in a declarative, signal-based way.
+                    </p>
+                    <div class="row">
+                        <div class="col-12">
+                            @if (userResourceData.isLoading()) {
+                            <span>Loading</span>
+                            }
+                            @if (userResourceData.hasValue()) {
+                            @for (item of userResourceData.value(); track $index) {
+                            <span>{{item.username}}</span> ,
+                            }
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <app-code-block [code]="resostr"></app-code-block>
+                        </div>
+                        <div class="col-5">
+                            <app-code-block [code]="resourhtmkl"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    rxResource api
+                </div>
+                <div class="card-body">
+                    <p>
+                        rxResource() we can use in case of observables
+                    </p>
+                    <div class="row">
+                        <div class="col-12">
+                            @if (user.isLoading()) {
+                                <span>Loading</span>
+                            }
+                            @if (user.hasValue()) {
+                                @for (item of userResourceData.value(); track $index) {
+                                 <span>{{item.username}}</span> ,
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <app-code-block [code]="rsrestsr"></app-code-block>
+                        </div>
+                        <div class="col-5">
+                            <app-code-block [code]="rshtmstr"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

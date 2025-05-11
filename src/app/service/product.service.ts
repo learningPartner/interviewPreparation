@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, shareReplay, tap } from 'rxjs';
+import { map, Observable, shareReplay, Subject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,8 @@ export class ProductService {
 
   originalData: any;
   data: any = {}
+
+  onLoggedUSerData: Subject< string> = new Subject<string>();
 
   private userDetailCache = new Map<number, Observable<any>>();
  

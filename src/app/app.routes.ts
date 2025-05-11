@@ -5,8 +5,18 @@ import { ProxyComponent } from './pages/proxy/proxy.component';
 import { RxjsOperatorComponent } from './pages/rxjs-operator/rxjs-operator.component';
 import { SubBehMapComponent } from './pages/sub-beh-map/sub-beh-map.component';
 import { TopicTestComponent } from './pages/topic-test/topic-test.component';
+import { SolidComponent } from './pages/solid/solid.component';
+import { DesignPatternComponent } from './pages/design-pattern/design-pattern.component';
+import { New17FeaturesComponent } from './pages/new17-features/new17-features.component';
+import { redirectByRole } from './service/utility';
+import { Angular18FeaturesComponent } from './pages/angular18-features/angular18-features.component';
 
 export const routes: Routes = [
+    {
+        path:'',
+        redirectTo: redirectByRole(),
+        pathMatch:'full'
+    },
     {
         path:"life-cycle",
         component:LifeCycleComponent
@@ -14,6 +24,10 @@ export const routes: Routes = [
     {
         path:"view-encap",
         component:ViewEncapComponent
+    },
+    {
+        path:"angular-18",
+        component:Angular18FeaturesComponent
     },
     {
         path:"proxy",
@@ -30,5 +44,17 @@ export const routes: Routes = [
     {
         path:"test-topic",
         component:TopicTestComponent
+    }, 
+    {
+        path:"solid-principles",
+        component:SolidComponent
+    }, 
+    {
+        path:"design-pattern",
+        component:DesignPatternComponent
+    }, 
+    {
+        path:"17-18-19-new-features",
+        component:New17FeaturesComponent
     }
 ];

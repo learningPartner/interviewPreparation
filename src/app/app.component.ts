@@ -18,18 +18,18 @@ export class AppComponent  implements OnInit{
   cityData: string []= [];
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.cityData = ["Jaipur","Jodhpur"];
-    }, 6000);
-    window.addEventListener("message", (event) => {
-      if (event.data && event.data.type === "THEME_CHANGE") {
-        this.applyTheme(event.data.theme);
-      }
-    });
+    // setTimeout(() => {
+    //   this.cityData = ["Jaipur","Jodhpur"];
+    // }, 6000);
+    // window.addEventListener("message", (event) => {
+    //   if (event.data && event.data.type === "THEME_CHANGE") {
+    //     this.applyTheme(event.data.theme);
+    //   }
+    // });
   
-    // Optionally apply saved theme initially
-    const savedTheme = localStorage.getItem("theme") || "light";
-    this.applyTheme(savedTheme);
+    // // Optionally apply saved theme initially
+    // const savedTheme = localStorage.getItem("theme") || "light";
+    // this.applyTheme(savedTheme);
   }
 
   applyTheme(theme: string) {

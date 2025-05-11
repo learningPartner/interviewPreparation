@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Function-Based Route Redirects
+                </div>
+                <div class="card-body">
+                    <p>
+                        in default route in earlier version we used to pass router name to redirect now it supports
+                        function as well
+                    </p>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <span>app.routes.ts</span>
+                            <app-code-block [code]="routerStr"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <span>utility.ts</span>
+                            <app-code-block [code]="redirfuncstr"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    computed signal
+                </div>
+                <div class="card-body">
+                    <p>
+                        you can pass a signal to chnage another signal value based on one signal value change, reactive
+                        signal it's value will depend on value chnage on signal we pass.
+                        We can't changed compoented signal value it will change if depedend value changes
+                    </p>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="computredTSr"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <p>doubleCount signal value will chnage after 5 sec</p>
+                            count => {{count()}} <br>
+                            doubleCount => {{doubleCount()}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Linked Signals
+                </div>
+                <div class="card-body">
+                    <p>
+                        linked signals are reactive variables that depend on other signals and update automatically when
+                        their dependencies change — like computed values.
+                    </p>
+                    <p>
+                        in source you can pass which signal we need to track if source changes then only it will compute
+                        again
+                    </p>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="linkestr1"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <p>total signal state value will chnage after 8 sec only as in source that value is there
+                            </p>
+                            total => {{total()}} <br>
+                            firstNum => {{firstNum()}}<br>
+                            secondNum => {{secondNum()}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, ContentChild, DoCheck, ElementRef, Input, KeyValueDiffer, KeyValueDiffers, OnChanges, SimpleChanges } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, DoCheck, ElementRef, Input, KeyValueDiffer, KeyValueDiffers, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-my-button',
@@ -6,25 +6,36 @@ import { Component, ContentChild, DoCheck, ElementRef, Input, KeyValueDiffer, Ke
   templateUrl: './my-button.component.html',
   styleUrl: './my-button.component.css'
 })
-export class MyButtonComponent implements DoCheck,OnChanges {
+export class MyButtonComponent implements DoCheck,OnChanges,AfterContentInit {
   @Input() user!: { name: string; age: number };
   private differ!: KeyValueDiffer<string, any>;
+  
+
+  @ContentChild('btnText') btnTxtSpan! : ElementRef; 
 
   constructor(private differs: KeyValueDiffers) {
-    setTimeout(() => { 
-      const ss = this.iconEle.nativeElement.innerText;
-    }, 6000);
+    // setTimeout(() => { 
+    //   const ss = this.iconEle.nativeElement.innerText;
+    // }, 6000);
   } 
 
   ngOnChanges(changes: SimpleChanges): void { 
+    debugger;
   }
   ngOnInit() {
-    if(this.differ) {
+    //const btnTetx = this.btnTxtSpan.nativeElement.innerText;
+    if(!this.differ) {
     this.differ = this.differs.find(this.user).create();
     }
   }
 
+  ngAfterContentInit(): void {
+    debugger;
+    //const btnTetx = this.btnTxtSpan.nativeElement.innerText;
+  }
+
   ngDoCheck() { 
+    debugger;
     if(this.differ) {
       const changes = this.differ.diff(this.user);
       if (changes) {
@@ -35,6 +46,6 @@ export class MyButtonComponent implements DoCheck,OnChanges {
     }
     
   }
-  @ContentChild('icon') iconEle! : ElementRef; 
+
   
 }

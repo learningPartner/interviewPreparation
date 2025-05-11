@@ -1,0 +1,204 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What is SOLID
+                </div>
+                <div class="card-body">
+                    <p>
+                        SOLID is a set of 5 principles for writing maintainable, scalable, and clean object-oriented
+                        code.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    S => Single Responsibility Principle (SRP)
+                </div>
+                <div class="card-body">
+                    <p>
+                        A class or component should have only one reason to change.
+                    </p>
+                    <ul>
+                        <li>Component handles view/UI logic only</li>
+                        <li>Services handle business logic or HTTP logic</li>
+                        <li>This separation makes your code testable and reusable.</li>
+                    </ul>
+                    <p>A component, service, or class should do only one job. In Angular, I make sure my components only
+                        manage the UI, and all data-fetching or logic goes into services. That way, if I need to change
+                        the UI or logic, I don’t touch both places</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    O => Open/Closed Principle (OCP)
+                </div>
+                <div class="card-body">
+                    <p>
+                        Software entities should be open for extension but closed for modification.
+                    </p>
+                    <ul>
+                        <li>In Angular: Use inheritance, interfaces, or strategy pattern to extend without modifying.
+                        </li>
+                        <li>We should be able to extend functionality without rewriting old code.</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                            <app-code-block [code]="oStr"></app-code-block>
+                        </div>
+                    </div>
+                    <p>If a class says it implements something, it should behave like it. In Angular, if I replace one
+                        service with another (like EmailService → SMSService), everything should still work, as long as
+                        both follow the same interface.</p>
+                    <p>If I need to support a new login method, I don't rewrite my AuthService. Instead, I plug in a new
+                        strategy or class — so old logic stays safe and unchanged.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    L => Liskov Substitution Principle (LSP)
+                </div>
+                <div class="card-body">
+                    <p>
+                        Derived classes must be substitutable for their base class.
+                    </p>
+                    <ul>
+                        <li>In Angular: Use interface-based DI — ensure derived services behave like the base
+                            class/interface.</li>
+
+                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                            <app-code-block [code]="lstr"></app-code-block>
+                        </div>
+                    </div>
+                    <p>Classes/components should only depend on what they actually use. Instead of having one big user
+                        interface with every possible field, I split them based on use-case — like Profile info, Address
+                        info, Cart info — so each module only depends on what it needs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    I => Interface Segregation Principle (ISP)
+                </div>
+                <div class="card-body">
+                    <p>
+                        Clients should not be forced to depend on interfaces they don’t use.
+                    </p>
+                    <ul>
+                        <li> In Angular: Create focused interfaces, not "God interfaces".</li>
+                        <li>Now different components/services can use only what they need</li>
+
+                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="istr1"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <app-code-block [code]="istr2"></app-code-block>
+                        </div>
+                    </div>
+                    <p>High-level parts of the app shouldn’t be tightly tied to low-level details. I inject services
+                        using interfaces or tokens, not direct classes. That way, I can swap APIs or services without
+                        touching the components that use them.”</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    D — Dependency Inversion Principle (DIP)
+                </div>
+                <div class="card-body">
+                    <p>
+                        High-level modules should not depend on low-level modules. Both should depend on abstractions.
+                    </p>
+                    <ul>
+                        <li> In Angular: Achieved through Dependency Injection.</li>
+                        <li>Now different components/services can use only what they need</li>
+
+                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <app-code-block [code]="istr1"></app-code-block>
+                        </div>
+                        <div class="col-6">
+                            <app-code-block [code]="istr2"></app-code-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What to Say in an Interview
+                </div>
+                <div class="card-body">
+                    <p>
+                        In Angular, I apply SOLID principles daily. For example, I keep components focused on view logic
+                        (SRP), use strategy patterns and interfaces to switch services without modifying existing code
+                        (OCP & DIP), and write lean interfaces specific to the context (ISP). Angular’s DI system makes
+                        it easy to follow these principles and build scalable apps."
+                    </p>
+                    <div class="row">
+                        <div class="col-12">
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Principle</th>
+                                        <th>Meaning</th>
+                                        <th>Angular Explanation</th>
+                                        <th>Real-world Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>S</strong> - Single Responsibility</td>
+                                        <td>One class/component should have one job.</td>
+                                        <td>Keep UI logic in components, business logic in services.</td>
+                                        <td>UserComponent shows profile, UserService fetches user data.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>O</strong> - Open/Closed</td>
+                                        <td>Open for extension, closed for modification.</td>
+                                        <td>Use strategy pattern or inheritance to extend features.</td>
+                                        <td>Add FacebookLogin strategy without changing AuthService.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>L</strong> - Liskov Substitution</td>
+                                        <td>Derived classes should be usable in place of base classes.</td>
+                                        <td>Use interfaces to create interchangeable services.</td>
+                                        <td>Replace EmailService with SMSService using the same interface.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>I</strong> - Interface Segregation</td>
+                                        <td>Don't force classes to implement unused properties.</td>
+                                        <td>Split large interfaces into smaller, focused ones.</td>
+                                        <td>Separate UserProfile, AddressInfo, and CartInfo interfaces.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>D</strong> - Dependency Inversion</td>
+                                        <td>High-level modules shouldn’t depend on low-level modules.</td>
+                                        <td>Inject abstractions (interfaces/tokens) instead of concrete classes.</td>
+                                        <td>Use PaymentGatewayInterface instead of StripeGateway directly.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

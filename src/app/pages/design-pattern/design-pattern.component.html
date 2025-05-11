@@ -1,0 +1,109 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What is Design Pattern
+                </div>
+                <div class="card-body">
+                    <p>
+                        Design patterns are proven solutions to common software design problems. we often use them to
+                        keep my Angular applications scalable and maintainable.
+                    </p>
+                    <ul>
+                        <li>Singleton pattern is naturally used in Angular services (when provided in root).</li>
+                        <li>Observer pattern is the core of RxJS — I use it to react to real-time data, like user auth
+                            status or notifications.</li>
+                        <li>I use the Strategy pattern when I want interchangeable behaviors — like different login or
+                            payment methods.</li>
+                        <li>Angular’s decorators like &#64;Component and &#64;Injectable are based on the Decorator
+                            pattern, which adds metadata and behavior to classes.</li>
+                        <li>I’ve also used the Factory pattern for dynamic service creation based on app config.</li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Singleton Pattern
+                </div>
+                <div class="card-body">
+                    <p>
+                        A class has only one instance throughout the app
+                    </p>
+                    <p>
+                        Angular services by default follow Singleton pattern when provided in root. This ensures there’s only one instance shared across the app unless scoped differently.
+                    </p> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Factory Pattern
+                </div>
+                <div class="card-body">
+                    <p>
+                        Create objects without exposing the creation logic to the client.
+                    </p>
+                    <p>
+                        Sometimes I use factories to create service instances dynamically — for example, selecting a payment gateway like RazorPay or Stripe based on config at runtime.
+                    </p>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <app-code-block [code]="facStr"></app-code-block>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Observer Pattern
+                </div>
+                <div class="card-body">
+                    <p>
+                        Allows subscribing to state changes.
+                    </p>
+                    <p>
+                        Angular uses RxJS which is built around the Observer pattern. Components subscribe to observables from services to react to data changes
+                    </p> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Strategy Pattern
+                </div>
+                <div class="card-body">
+                    <p>
+                        When I need different behavior based on conditions, I define strategies and inject the right one. Like choosing between different login mechanisms — Google, Facebook, Email
+                    </p>
+                    <p>
+                        LoginStrategy interface → EmailLogin, GoogleLogin,
+                    </p> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Decorator Pattern
+                </div>
+                <div class="card-body">
+                    <p>
+                        Adds additional behavior to an object without altering its structure.
+                    </p>
+                    <p>
+                        Angular decorators like &#64;Component, &#64;Injectable, and &#64;Directive are actual examples of the decorator pattern. They attach metadata and behavior to classes.
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,85 +1,24 @@
-<div class="container">
-    <div class="search-container">
-        <input type="text" [formControl]="serchControl" class="search-input" placeholder="Search products...">
+<div class="row">
+    <div class="col-8">
+        <app-my-card [cardTitle]="'Test Card'" [htmlTemplate]="myTem">
+
+        </app-my-card>
     </div>
-    
-    <div class="product-grid">
-        <div class="product-card">
-            <div class="product-thumbnail">
-                <img src="https://picsum.photos/seed/airpods/300/300" alt="Apple AirPods Max">
-                <div class="product-brand">Apple</div>
-                <div class="product-discount">11.7% OFF</div>
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Apple AirPods Max Silver</h3>
-                <div class="product-meta">
-                    <div class="product-category">Mobile Accessories</div>
-                    <div class="product-rating">★ 3.1</div>
-                </div>
-                <div class="product-price">$549.99</div>
-                <div class="product-footer">
-                    <div>SKU: HPK82VDE</div>
-                    <div>In Stock</div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-thumbnail">
-                <img src="https://picsum.photos/seed/airpods/300/300" alt="Apple AirPods Max">
-                <div class="product-brand">Apple</div>
-                <div class="product-discount">11.7% OFF</div>
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Apple AirPods Max Silver</h3>
-                <div class="product-meta">
-                    <div class="product-category">Mobile Accessories</div>
-                    <div class="product-rating">★ 3.1</div>
-                </div>
-                <div class="product-price">$549.99</div>
-                <div class="product-footer">
-                    <div>SKU: HPK82VDE</div>
-                    <div>In Stock</div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-thumbnail">
-                <img src="https://picsum.photos/seed/airpods/300/300" alt="Apple AirPods Max">
-                <div class="product-brand">Apple</div>
-                <div class="product-discount">11.7% OFF</div>
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Apple AirPods Max Silver</h3>
-                <div class="product-meta">
-                    <div class="product-category">Mobile Accessories</div>
-                    <div class="product-rating">★ 3.1</div>
-                </div>
-                <div class="product-price">$549.99</div>
-                <div class="product-footer">
-                    <div>SKU: HPK82VDE</div>
-                    <div>In Stock</div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-thumbnail">
-                <img src="https://picsum.photos/seed/airpods/300/300" alt="Apple AirPods Max">
-                <div class="product-brand">Apple</div>
-                <div class="product-discount">11.7% OFF</div>
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Apple AirPods Max Silver</h3>
-                <div class="product-meta">
-                    <div class="product-category">Mobile Accessories</div>
-                    <div class="product-rating">★ 3.1</div>
-                </div>
-                <div class="product-price">$549.99</div>
-                <div class="product-footer">
-                    <div>SKU: HPK82VDE</div>
-                    <div>In Stock</div>
-                </div>
-            </div>
-        </div>
-        <!-- Repeat product-card div for more products -->
+    <div class="col-4">
+        <app-my-card [cardTitle]="cardTitleName" [htmlTemplate]="myTem2">
+
+        </app-my-card>
     </div>
 </div>
+
+
+
+
+<ng-template #myTem>
+        <app-my-table [colArray]="['name','username','email','website']" [gridDataList]="userList"></app-my-table>
+</ng-template>
+
+
+<ng-template #myTem2>
+    <app-my-table [colArray]="['empId','empName','emmProjectName']" [gridDataList]="empList"></app-my-table>
+</ng-template>
