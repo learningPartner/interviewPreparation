@@ -92,7 +92,9 @@ timestrsub=`this.timerInterval.pipe(
   take(3)
 ).subscribe((timer:number)=>{
   console.log(timer)
-})`
+})`;
+
+ 
 
   constructor(private prodSrv: ProductService,private http: HttpClient) {
 
@@ -178,7 +180,64 @@ mpCityArray = of(['Bhopal','Indore'])
   console.log(result[0])
   console.log(result[1])
 })`
+
+swichMapStr = `const searchUrl = 'https://jsonplaceholder.typicode.com/users';
+this.searchControl.valueChanges.pipe(
+  switchMap((res:string)=> this.http.get(this.searchUrl +"search="+res))
+).subscribe((response:any)=>{
+  console.log(response)
+})`;
+switcjmapstr2=`const searchUrl = 'https://jsonplaceholder.typicode.com/users';
+this.http.get(searchUrl).pipe(
+  switchMap((res: any) =>
+    this.http.get(searchUrl +"/" + res[0].id)
+  )
+).subscribe((res: any) => {
+  debugger;
+});`
+mergeMApStr=`const searchUrl = 'https://jsonplaceholder.typicode.com/users';
+this.http.get(searchUrl).pipe(
+  mergeMap((res: any) => this.http.get(searchUrl+"/" + res[0].id))
+).subscribe((res: any) => {
+  debugger;
+})`
+mergeMapstr2=`const searchUrl = 'https://jsonplaceholder.typicode.com/users';
+this.http.get(searchUrl).pipe(
+  mergeMap((res: any) => from(res)), // emit users one by one
+  mergeMap((user: any) =>
+    this.http.get(searchUrl+"/" + user.id)
+  )
+).subscribe((res: any) => {
+  debugger;
+});`
+mergmpestr3= `const searchUrl = 'https://jsonplaceholder.typicode.com/users'
+from([2,3,4]).pipe(
+  mergeMap((userid:number)=> this.http.get(searchUrl+"/"+userid))
+).subscribe((result:any)=>{
+  debugger;
+})`
+concatmapstr=`const searchUrl = 'https://jsonplaceholder.typicode.com/users'
+from([2,3,4]).pipe(
+  concatMap((userid:number)=> this.http.get(searchUrl +"/"+userid))
+).subscribe((result:any)=>{
+  debugger;
+})`
+exhostmapstr=`loginClick$.pipe(
+  exhaustMap(() => authService.login())
+)`
   ngOnInit(): void {
+
+    const getUsers$ = this.http.get("https://jsonplaceholder.typicode.com/users");
+    const getComments$ = this.http.get("https://jsonplaceholder.typicode.com/comments");
+    const getAlbums$ = this.http.get("https://jsonplaceholder.typicode.com/albums");
+
+    this.http.get("https://jsonplaceholder.typicode.com/users").pipe(
+      mergeMap((res:any)=> this.http.get("https://jsonplaceholder.typicode.com/users/"+res[0].id))
+    ).subscribe((res:any)=>{
+
+    })
+
+
 
     forkJoin([this.mhCityArray,this.mpCityArray]).subscribe((result:any)=>{
       

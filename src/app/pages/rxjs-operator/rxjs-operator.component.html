@@ -7,11 +7,11 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
                             in.ts
                             <app-code-block [code]="debound"></app-code-block> 
                         </div>
-                        <div class="col-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
                             in.html
                             <app-code-block [code]="text"></app-code-block> 
                         </div>
@@ -35,29 +35,29 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             <app-code-block [code]="ofobs"></app-code-block> 
                         </div> 
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             <span>Here we get City Array</span>
                             <app-code-block [code]="ofsub"></app-code-block> 
                         </div>
                     </div> 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             <app-code-block [code]="fromobs"></app-code-block> 
                         </div> 
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             <span>Here Subbscribe block will execute for every element in array, each time we will get single element like for loop</span>
                             <app-code-block [code]="fromobssub"></app-code-block> 
                         </div>
                     </div> 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             this is like setInterval from javaScript, if will emit data after 1 sec
                             <app-code-block [code]="intervlstr"></app-code-block> 
                         </div> 
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             <span>subscribe will execuite after 1 sec</span>
                             <app-code-block [code]="intersubstr"></app-code-block> 
                         </div>
@@ -72,11 +72,11 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                              we create inverval and another observable
                             <app-code-block [code]="takeuntillstr"></app-code-block> 
                         </div> 
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             <span>after 5 sec we are emiting another obserable so interval will stop after that</span>
                             <app-code-block [code]="untilsubStr"></app-code-block> 
                         </div>
@@ -91,11 +91,11 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                              create a interval which emits value after 1 sec
                             <app-code-block [code]="timetTak"></app-code-block> 
                         </div> 
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             <span>here we use take so after 3rd it will stop receiving data, its like unsubscribe</span>
                             <app-code-block [code]="timestrsub"></app-code-block> 
                         </div>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                             just Like setTimeout
                             <app-code-block [code]="deltystr"></app-code-block> 
                         </div> 
@@ -126,11 +126,11 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
                             <app-code-block [code]="forkObsStr"></app-code-block> 
                             <app-code-block [code]="forkSubStr"></app-code-block> 
                         </div> 
-                        <div class="col-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
                             <app-code-block [code]="meprMapStr"></app-code-block> 
                         </div>
                     </div> 
@@ -144,14 +144,85 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
                             <app-code-block [code]="combLatStr"></app-code-block> 
                             <app-code-block [code]="combGHtlStr"></app-code-block> 
                         </div> 
-                        <div class="col-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
                             <app-code-block [code]="combLateSubStr"></app-code-block> 
                             <app-code-block [code]="comblatewith"></app-code-block> 
                             <p>Both will Behave same</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                  switchMap |  mergeMap | concatMap |  exhaustMap
+                </div>
+                <div class="card-body">  
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                             <h6>🌀 switchMap: The Smart Replacer</h6>
+                            <ul>
+                                <li>It cancels the previous inner observable whenever a new one comes in.</li>
+                                <li>Useful when you only care about the latest emitted value.</li>
+                                <li>✅ Great for: Autocomplete, live search, debounced input</li>
+                            </ul> 
+                        </div> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                            <app-code-block [code]="swichMapStr"></app-code-block>  
+                            <app-code-block [code]="switcjmapstr2"></app-code-block>  
+                        </div>
+                    </div> 
+                     <hr>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                             <h6>🌊 mergeMap: The Parallel Player</h6>
+                            <ul>
+                                <li>It subscribes to all inner observables concurrently.</li>
+                                <li>Doesn’t cancel anything, so all requests will go through.</li>
+                                <li>✅ Great for: Making multiple API calls in parallel</li>
+                                <li>No control over completion order</li>
+                            </ul> 
+                            <app-code-block [code]="mergmpestr3"></app-code-block>    
+                        </div> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                            <app-code-block [code]="mergeMapstr2"></app-code-block>  
+                            <app-code-block [code]="mergeMApStr"></app-code-block>
+                             
+                        </div>
+                    </div> 
+                    <hr>
+                     <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                             <h6>🚶‍♂️concatMap: The Queue Followerr</h6>
+                            <ul>
+                                <li>Waits for each inner observable to complete before subscribing to the next.</li>
+                                <li>Preserves order </li>
+                                <li>Great for: Step-by-step processes-Save form => Upload image => Send confirmation</li> 
+                            </ul>   
+                        </div> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                            <app-code-block [code]="concatmapstr"></app-code-block>   
+                             
+                        </div>
+                    </div> 
+                     <hr>
+                     <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                             <h6>🚫 exhaustMap: The Gatekeeper</h6>
+                            <ul>
+                                <li>Ignores new emissions if there’s an active inner observable.</li>
+                                <li>Good for avoiding duplicate actions — like preventing multiple api calls.</li>
+                                <li>if one api call is in progress - it won't proccess another api call</li> 
+                            </ul>   
+                        </div> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                            <app-code-block [code]="exhostmapstr"></app-code-block>   
+                             
                         </div>
                     </div> 
                 </div>
