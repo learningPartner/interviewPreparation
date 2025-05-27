@@ -10,6 +10,9 @@ import { DesignPatternComponent } from './pages/design-pattern/design-pattern.co
 import { New17FeaturesComponent } from './pages/new17-features/new17-features.component';
 import { redirectByRole } from './service/utility';
 import { Angular18FeaturesComponent } from './pages/angular18-features/angular18-features.component';
+import { UnitTestingComponent } from './pages/unit-testing/unit-testing.component';
+import { ComponentBasicComponent } from './pages/component/component-basic/component-basic.component';
+import { DirectiveExComponent } from './pages/directive-ex/directive-ex.component';
 
 export const routes: Routes = [
     {
@@ -33,6 +36,18 @@ export const routes: Routes = [
         path:"proxy",
         component:ProxyComponent
     }, 
+    {
+        path:"component-basic",
+        component:ComponentBasicComponent
+    }, 
+     {
+        path:"directive",
+        component:DirectiveExComponent
+    }, 
+    {
+        path:"unit-testing",
+        component:UnitTestingComponent
+    },
     {
         path:"rxjs-operator",
         component:RxjsOperatorComponent

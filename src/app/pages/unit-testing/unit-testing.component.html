@@ -1,0 +1,113 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What is Unit Testing in Angular, and why is it important?
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                           <p>Unit testing in Angular is the process of testing individual pieces of code—like components, services, pipes, or directives—in isolation. The main goal is to ensure that each unit of the app works as expected independently.</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                            <ul>
+                                <li>Detect bugs early before integration</li>
+                                <li>Improve code reliability and confidence in refactoring</li>
+                                <li>Acts as documentation for how each unit should behave</li>
+                                <li>Jasmine – for writing the test specs</li>
+                                <li>Karma – as the test runner (executes the tests in a browser environment)</li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   What is TestBed in Angular?
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                           <p>TestBed is the primary Angular testing utility that allows you to create an Angular testing module—like a mini Angular app—just for the test environment.</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                            You use it to:
+                            <ul>
+                                <li>Declare components, pipes, and directives you want to test.</li>
+                                <li>Provide services or mocks.</li>
+                                <li>Configure module-level setup (like imports, declarations, providers).</li> 
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   What is TestBed in Angular?
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                           <p>TestBed is the primary Angular testing utility that allows you to create an Angular testing module—like a mini Angular app—just for the test environment.</p>
+                         You use it to:
+                            <ul>
+                                <li>Declare components, pipes, and directives you want to test.</li>
+                                <li>Provide services or mocks.</li>
+                                <li>Configure module-level setup (like imports, declarations, providers).</li> 
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                           
+                            <app-code-block [code]="testbedstr"></app-code-block>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                  What is beforeEach in Angular Unit Testing
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+                           <p>In Jasmine, beforeEach() is a special function that runs before each test case (it()) in a describe block. Think of it as a setup step to prepare your test environment before each individual test runs.</p>
+It helps you:
+                            <ul>
+                                <li>Avoid repeating code (like component setup or service creation).</li>
+                                <li>Ensure each test starts with a fresh, clean state</li> 
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                 What is describe in Jasmine
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+                           <p>describe() is a test suite — it’s a way to group related test cases (it() blocks) together under a common description.</p>
+                            <p>It helps organize your tests into logical blocks, so when you run them in Karma, you can easily see which group of tests passed or failed.</p>
+                            <ul>
+                                <li>xdescribe() : Skip the whole suite</li>
+                                <li>xit() – Skip just one test</li> 
+                                <li>fdescribe() – Focus only this suite</li>
+                            </ul>
+                        </div>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

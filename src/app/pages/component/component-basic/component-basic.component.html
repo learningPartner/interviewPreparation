@@ -1,0 +1,130 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What is a component in Angular?
+                </div>
+                <div class="card-body">
+                    A component is the fundamental building block of an Angular application. It controls a section of
+                    the UI.
+                    It can have multple files as
+                    <ul>
+                        <li>A TypeScript class (logic)</li>
+                        <li>HTML template (view)</li>
+                        <li>optional CSS style file</li>
+                    </ul>
+                     
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    purpose of the &#64; Component decorator?
+                </div>
+                <div class="card-body">
+                    The &#64;Component decorator tells Angular that the class is a component, in component decorator we
+                    have so many options like
+                    <ul>
+                        <li><strong>selector</strong>: Defines the custom HTML tag used to embed the component.</li>
+                        <li><strong>template</strong>: Inline HTML content for the component.</li>
+                        <li><strong>templateUrl</strong>: Path to an external HTML file for the component template.</li>
+                        <li><strong>styles</strong>: Inline CSS styles applied specifically to this component.</li>
+                        <li><strong>styleUrls</strong>: Path(s) to external CSS/SCSS files for styling the component.
+                        </li>
+                        <li><strong>providers</strong>: Registers services at the component level (local DI).</li>
+                        <li><strong>encapsulation</strong>: Controls style encapsulation (Emulated, None, or ShadowDom).
+                        </li> 
+                        <li><strong>changeDetection</strong>: Sets the change detection strategy (Default or OnPush).
+                        </li>
+                        <li><strong>imports</strong>: (Standalone only) Modules/components this standalone component
+                            depends on.</li>
+                        <li><strong>standalone</strong>: (Angular 14+) Declares this component as standalone (not part
+                            of a module).</li> 
+                    </ul>
+                    <!-- <app-code-block [code]="sampeArrStr"></app-code-block> -->
+                </div>
+            </div>
+        </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Data Binding in Component
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 bg-success text-center">
+                            <h6>One Way Data Binding </h6>
+                        </div>
+                        <div class="col-6 bg-primary text-center">
+                            <h6>Two Way Data Binding</h6>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-6 bg-secondary ">
+                            <div class="row">
+                                <div class="col-6">
+                                    From .ts to .html
+                                </div>
+                                <div class="col-6">
+                                    From .html to .ts
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 bg-primary">
+                            <h6>Using ngModel</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 bg-warning ">
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul>
+                                        <li>Property Binding</li>
+                                        <li>Interpolation</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul>
+                                        <li>Event Binding</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 bg-primary">
+                           
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   &#64;Input() and &#64; Output() decorators and how are they used?
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li> &#64; Input(): Pass data from parent to child</li>
+                        <li> &#64;Output(): Send event/data from child to parent</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   What are Di
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li> &#64; Input(): Pass data from parent to child</li>
+                        <li> &#64;Output(): Send event/data from child to parent</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

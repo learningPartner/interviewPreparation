@@ -1,0 +1,151 @@
+<div class="container-fluid">
+    <div class="row">  
+       <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   use of map Operator
+                </div>
+                <div class="card-body">
+                    consider api response like this
+                    <app-code-block [code]="sampeArrStr"></app-code-block> 
+                    <div class="row">
+                        <div class="col-6"> 
+                            <app-code-block [code]="mapNewArr"></app-code-block> 
+                        </div>
+                        <div class="col-6"> 
+                            <app-code-block [code]="getsuer2str"></app-code-block> 
+                        </div>
+                        
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   use of map Operator with array filter method
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-6"> 
+                            <app-code-block [code]="arryStr"></app-code-block> 
+                            <app-code-block [code]="filterstr"></app-code-block> 
+                        </div>
+                        <div class="col-6"> 
+                            <app-code-block [code]="filtertsr1"></app-code-block> 
+                            <app-code-block [code]="filterstr2"></app-code-block> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                  tap operator
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-7"> 
+                            but here we are extracting only fddMeasurements but storing whole response in service variable
+                            <app-code-block [code]="tapStr"></app-code-block>  
+                        </div> 
+                        <div class="col-5">
+                            api full Response
+                            <app-code-block [code]="oroftStr"></app-code-block>  
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Subject & BehaviorSubject
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12"> 
+                            <p>Both Are are Multicasting Observables Means They allow multiple subscribers to listen to the same Observable stream. However, they differ in how they handle emissions, especially initial values and replay behavior.</p>
+                        </div>  
+                        <div class="col-12">
+                            <div class="mt-1">
+                                <h3 class="mb-4">Subject vs BehaviorSubject (RxJS)</h3>
+                                <table class="table table-bordered table-hover">
+                                  <thead class="table-dark">
+                                    <tr>
+                                      <th>Feature</th>
+                                      <th>Subject</th>
+                                      <th>BehaviorSubject</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Requires initial value</td>
+                                      <td><span class="text-danger">No ❌</span></td>
+                                      <td><span class="text-success">Yes ✅</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Emits last value to new subscribers</td>
+                                      <td><span class="text-danger">No ❌</span></td>
+                                      <td><span class="text-success">Yes ✅</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Use case</td>
+                                      <td>Events (e.g. clicks, notifications)</td>
+                                      <td>State/data stream (e.g. auth status, current user)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Replay old values</td>
+                                      <td><span class="text-danger">Never ❌</span></td>
+                                      <td><span class="text-success">Always (latest only) ✅</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                  subject
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-7"> 
+                            <span>How to Create Subject</span>
+                            <app-code-block [code]="subStr"></app-code-block>  
+                        </div> 
+                        <div class="col-5">
+                             how to use Next and Subscrbe
+                            <app-code-block [code]="subEmitStr"></app-code-block>  
+                            <app-code-block [code]="subSubStr"></app-code-block> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    BehaviorSubject
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-7"> 
+                            <span>How to Create BehaviorSubject</span>
+                            <app-code-block [code]="behaStr"></app-code-block>  
+                        </div> 
+                        <div class="col-5">
+                             how to use Next and Subscrbe
+                            <app-code-block [code]="behSubStr"></app-code-block>   
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
