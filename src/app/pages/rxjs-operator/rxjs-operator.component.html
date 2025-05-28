@@ -1,5 +1,32 @@
 <div class="container-fluid">
-    <div class="row">  
+    <div class="row"> 
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Hot and Cold Observables in RxJS
+                </div>
+                <div class="card-body"> 
+                    <p>A cold observable creates a new execution for each subscriber — like an HTTP call. A hot observable shares the same data stream among all subscribers — like fromEvent or a Subject. In Angular, cold observables are common for APIs, but we can convert them to hot ones using shareReplay when caching is needed.</p>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                            <ul>
+                                <li>Starts emitting only when someone subscribes.</li>
+                                <li>Each subscriber gets separate data streams.</li>
+                                <li>Each subscriber gets a different random value.</li>
+                            </ul>
+                            <app-code-block [code]="coldStr"></app-code-block>  
+                        </div> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                            <ul>
+                                <li>Subscribers share the same source. It emits even if no one is listening yet.</li>
+                                <li>All subscribers share the same data source.</li> 
+                            </ul> 
+                            <app-code-block [code]="hotsStr"></app-code-block>  
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div> 
        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
             <div class="card">
                 <div class="card-header bg-secondary">

@@ -225,6 +225,11 @@ from([2,3,4]).pipe(
 exhostmapstr=`loginClick$.pipe(
   exhaustMap(() => authService.login())
 )`
+coldStr=`const cold$ = new Observable(observer => {
+  console.log('New Observable execution');
+  observer.next(Math.random());
+});`
+hotsStr=`const hot$ = new Subject();`
   ngOnInit(): void {
 
     const getUsers$ = this.http.get("https://jsonplaceholder.typicode.com/users");
