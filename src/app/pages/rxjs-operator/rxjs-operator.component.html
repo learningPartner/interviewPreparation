@@ -255,6 +255,37 @@
                 </div>
             </div>
         </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                     multple api call, sequencial one then next then next
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                            <app-code-block [code]="multstr"></app-code-block>  
+                        </div> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                            <app-code-block [code]="multstr2"></app-code-block>  
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                     on success of one api call trigger another api call with paramater from 1st api resposne and need both response
+                </div>
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12 col-sm-12"> 
+                            <app-code-block [code]="multpleseqstr"></app-code-block>  
+                        </div>  
+                    </div> 
+                </div>
+            </div>
+        </div>
     </div> 
 </div>
 

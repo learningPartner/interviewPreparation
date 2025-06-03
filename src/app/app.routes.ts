@@ -38,7 +38,12 @@ export const routes: Routes = [
     }, 
     {
         path:"component-basic",
-        component:ComponentBasicComponent
+        component:ComponentBasicComponent,
+        data: {
+            icon:'faf',
+         //   test:''asd
+        }
+        
     }, 
      {
         path:"directive",

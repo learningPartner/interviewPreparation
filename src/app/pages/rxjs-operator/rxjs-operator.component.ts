@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../../service/product.service';
-import { combineLatest, combineLatestAll, combineLatestWith, concatMap, debounce, debounceTime, delay, distinctUntilChanged, exhaustMap, filter, forkJoin, from, fromEvent, interval, mergeMap, Observable, of, Subject, switchMap, take, takeUntil } from 'rxjs';
+import { combineLatest, combineLatestAll, combineLatestWith, concatMap, debounce, debounceTime, delay, distinctUntilChanged, exhaustMap, filter, forkJoin, from, fromEvent, interval, map, mergeMap, Observable, of, Subject, switchMap, take, takeUntil } from 'rxjs';
 import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
 import { CodeBlockComponent } from "../../reusaabe/code-block/code-block.component";
 import { CommonModule } from '@angular/common';
@@ -230,7 +230,40 @@ coldStr=`const cold$ = new Observable(observer => {
   observer.next(Math.random());
 });`
 hotsStr=`const hot$ = new Subject();`
+multstr =`const getAllUsers$ = this.http.get("https://jsonplaceholder.typicode.com/users"); 
+getAllUsers$.pipe(
+  switchMap((user:any)=> this.http.get("https://jsonplaceholder.typicode.com/comments?userid="+ user[0].id)),
+  switchMap((comment:any)=> this.http.get("https://jsonplaceholder.typicode.com/replies?commentid="+ comment[0].id) )
+).subscribe(replies=>{
+  
+})`;
+multstr2 =`const getAllUsers$ = this.http.get("https://jsonplaceholder.typicode.com/users"); 
+getAllUsers$.pipe(
+  concatMap((user:any)=> this.http.get("https://jsonplaceholder.typicode.com/comments?userid="+ user[0].id)),
+  concatMap((comment:any)=> this.http.get("https://jsonplaceholder.typicode.com/replies?commentid="+ comment[0].id) )
+).subscribe(replies=>{
+  
+})`
+
+multpleseqstr=`this.http.get("https://jsonplaceholder.typicode.com/users/1").pipe(
+  switchMap(userInfo =>
+    this.http.get("https://jsonplaceholder.typicode.com/roles/1").pipe(
+      map((roles: any) => ({ userData: userInfo, roles: roles }))
+    )
+  )
+).subscribe((res: any) => {
+})`
   ngOnInit(): void {
+
+    this.http.get("https://jsonplaceholder.typicode.com/users/1").pipe(
+      switchMap(userInfo =>
+        this.http.get("https://jsonplaceholder.typicode.com/roles/1").pipe(
+          map((roles: any) => ({ userData: userInfo, roles: roles }))
+        )
+      )
+    ).subscribe((res: any) => {
+
+    })
 
     const getUsers$ = this.http.get("https://jsonplaceholder.typicode.com/users");
     const getComments$ = this.http.get("https://jsonplaceholder.typicode.com/comments");
@@ -242,6 +275,15 @@ hotsStr=`const hot$ = new Subject();`
 
     })
 
+    const getAllUsers$ = this.http.get("https://jsonplaceholder.typicode.com/users"); 
+
+    getAllUsers$.pipe(
+      concatMap((user:any)=> this.http.get("https://jsonplaceholder.typicode.com/comments?userid="+ user[0].id)),
+      concatMap((comment:any)=> this.http.get("https://jsonplaceholder.typicode.com/replies?commentid="+ comment[0].id) )
+    ).subscribe(replies=>{
+
+    })
+     
 
 
     forkJoin([this.mhCityArray,this.mpCityArray]).subscribe((result:any)=>{

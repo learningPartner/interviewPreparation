@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { ChnageDetectionComponent } from "./pages/chnage-detection/chnage-detection.component";
 import { RxjsOperatorComponent } from "./pages/rxjs-operator/rxjs-operator.component";
 import { ViewChildContentComponent } from "./pages/view-child-content/view-child-content.component";
 import { MyButtonComponent } from './reusaabe/my-button/my-button.component';
 import { NgContanierTempComponent } from "./pages/ng-contanier-temp/ng-contanier-temp.component";
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,11 @@ export class AppComponent  implements OnInit{
 
   cityData: string []= [];
 
+  rouetr = inject(Router);
+  
   ngOnInit(): void {
+    //this.rouetr.navigate(['asdas',] , {state:{id:''}})
+    /// syate =  history.state['id'];
     // setTimeout(() => {
     //   this.cityData = ["Jaipur","Jodhpur"];
     // }, 6000);
