@@ -21,6 +21,30 @@
         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
             <div class="card">
                 <div class="card-header bg-secondary">
+                   What is Standalone Component ?
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                            <ul>
+                                <li> Standalone components are a new type of Angular component that does not need to be declared in a NgModule .
+                                    These are components that can be used directly in the template of another component without being part of an
+                                    NgModule, or imported in an NgModule.</li>
+                                <li> We Define standalone component by adding standalone field as true</li>
+                                <li>From Angular 16 we got standalone components</li>
+                                <li>From 18 By Defyalt all Components are standalone</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+                            <app-code-block [code]="standStr"></app-code-block>  
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
                     purpose of the &#64; Component decorator?
                 </div>
                 <div class="card-body">
@@ -116,13 +140,28 @@
          <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
             <div class="card">
                 <div class="card-header bg-secondary">
-                   What are Di
+                  Various ways of component communication
                 </div>
                 <div class="card-body">
-                    <ul>
-                        <li> &#64; Input(): Pass data from parent to child</li>
-                        <li> &#64;Output(): Send event/data from child to parent</li>
-                    </ul>
+                    <p>To pass data from one component to another there are following ways based on scenario</p>
+                     <div class="row">
+                        <div class="col-6">
+                            <h6>In case of Parent - Child Relationship</h6>
+                            <ul>
+                                <li>using Input and Output.</li>
+                                <li>using viewChild.</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                             <h6>In case of No Parent - Child Relationship</h6>
+                            <ul>
+                                <li>using service by storing value into variables.</li>
+                                <li>using Subject & SubjectBehaviour of RXJS.</li>
+                                <li>using routing i.e. navigating from one component to another with query param.</li>
+                                <li>store data in local Storage or session Storage and read data wherever we need.</li>
+                            </ul>
+                        </div>
+                     </div>
                 </div>
             </div>
         </div>

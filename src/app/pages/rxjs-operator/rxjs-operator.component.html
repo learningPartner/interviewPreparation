@@ -8,7 +8,7 @@
                 <div class="card-body"> 
                     <p>A cold observable creates a new execution for each subscriber — like an HTTP call. A hot observable shares the same data stream among all subscribers — like fromEvent or a Subject. In Angular, cold observables are common for APIs, but we can convert them to hot ones using shareReplay when caching is needed.</p>
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <ul>
                                 <li>Starts emitting only when someone subscribes.</li>
                                 <li>Each subscriber gets separate data streams.</li>
@@ -16,7 +16,7 @@
                             </ul>
                             <app-code-block [code]="coldStr"></app-code-block>  
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <ul>
                                 <li>Subscribers share the same source. It emits even if no one is listening yet.</li>
                                 <li>All subscribers share the same data source.</li> 
@@ -34,11 +34,11 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             in.ts
                             <app-code-block [code]="debound"></app-code-block> 
                         </div>
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             in.html
                             <app-code-block [code]="text"></app-code-block> 
                         </div>
@@ -62,29 +62,29 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <app-code-block [code]="ofobs"></app-code-block> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <span>Here we get City Array</span>
                             <app-code-block [code]="ofsub"></app-code-block> 
                         </div>
                     </div> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <app-code-block [code]="fromobs"></app-code-block> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <span>Here Subbscribe block will execute for every element in array, each time we will get single element like for loop</span>
                             <app-code-block [code]="fromobssub"></app-code-block> 
                         </div>
                     </div> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             this is like setInterval from javaScript, if will emit data after 1 sec
                             <app-code-block [code]="intervlstr"></app-code-block> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <span>subscribe will execuite after 1 sec</span>
                             <app-code-block [code]="intersubstr"></app-code-block> 
                         </div>
@@ -99,11 +99,11 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                              we create inverval and another observable
                             <app-code-block [code]="takeuntillstr"></app-code-block> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <span>after 5 sec we are emiting another obserable so interval will stop after that</span>
                             <app-code-block [code]="untilsubStr"></app-code-block> 
                         </div>
@@ -118,11 +118,11 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                              create a interval which emits value after 1 sec
                             <app-code-block [code]="timetTak"></app-code-block> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <span>here we use take so after 3rd it will stop receiving data, its like unsubscribe</span>
                             <app-code-block [code]="timestrsub"></app-code-block> 
                         </div>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             just Like setTimeout
                             <app-code-block [code]="deltystr"></app-code-block> 
                         </div> 
@@ -153,11 +153,11 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <app-code-block [code]="forkObsStr"></app-code-block> 
                             <app-code-block [code]="forkSubStr"></app-code-block> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <app-code-block [code]="meprMapStr"></app-code-block> 
                         </div>
                     </div> 
@@ -171,11 +171,11 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <app-code-block [code]="combLatStr"></app-code-block> 
                             <app-code-block [code]="combGHtlStr"></app-code-block> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <app-code-block [code]="combLateSubStr"></app-code-block> 
                             <app-code-block [code]="comblatewith"></app-code-block> 
                             <p>Both will Behave same</p>
@@ -191,7 +191,7 @@
                 </div>
                 <div class="card-body">  
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                              <h6>🌀 switchMap: The Smart Replacer</h6>
                             <ul>
                                 <li>It cancels the previous inner observable whenever a new one comes in.</li>
@@ -199,14 +199,14 @@
                                 <li>✅ Great for: Autocomplete, live search, debounced input</li>
                             </ul> 
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                             <app-code-block [code]="swichMapStr"></app-code-block>  
                             <app-code-block [code]="switcjmapstr2"></app-code-block>  
                         </div>
                     </div> 
                      <hr>
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                              <h6>🌊 mergeMap: The Parallel Player</h6>
                             <ul>
                                 <li>It subscribes to all inner observables concurrently.</li>
@@ -216,7 +216,7 @@
                             </ul> 
                             <app-code-block [code]="mergmpestr3"></app-code-block>    
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                             <app-code-block [code]="mergeMapstr2"></app-code-block>  
                             <app-code-block [code]="mergeMApStr"></app-code-block>
                              
@@ -224,7 +224,7 @@
                     </div> 
                     <hr>
                      <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                              <h6>🚶‍♂️concatMap: The Queue Followerr</h6>
                             <ul>
                                 <li>Waits for each inner observable to complete before subscribing to the next.</li>
@@ -232,14 +232,14 @@
                                 <li>Great for: Step-by-step processes-Save form => Upload image => Send confirmation</li> 
                             </ul>   
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                             <app-code-block [code]="concatmapstr"></app-code-block>   
                              
                         </div>
                     </div> 
                      <hr>
                      <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                              <h6>🚫 exhaustMap: The Gatekeeper</h6>
                             <ul>
                                 <li>Ignores new emissions if there’s an active inner observable.</li>
@@ -247,7 +247,7 @@
                                 <li>if one api call is in progress - it won't proccess another api call</li> 
                             </ul>   
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">  
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">  
                             <app-code-block [code]="exhostmapstr"></app-code-block>   
                              
                         </div>
@@ -262,10 +262,10 @@
                 </div>
                 <div class="card-body"> 
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <app-code-block [code]="multstr"></app-code-block>  
                         </div> 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-6"> 
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12"> 
                             <app-code-block [code]="multstr2"></app-code-block>  
                         </div>
                     </div> 

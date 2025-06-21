@@ -1,1 +1,200 @@
-<p>directive-ex works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What are directives
+                </div>
+                <div class="card-body">
+                    <p>
+                        Directives add behaviour to an existing DOM element or an existing component instance.
+                        Multple directives can be applied to single DOM element. It inform how DOM Element should behave
+                    </p>
+                    <ul>
+                        <li>Like in case of *ngIf it add or remove element</li>
+                        <li>by ngClass or ngStyle it add dynamic class or css to DOM Element</li>
+                        <li>ngModel sync variable with texbox value</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    Types of Directives
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Structural Directive</strong> - responsible to add or remove elements from DOM *ngIf
+                            , *ngFor.</li>
+                        <li><strong>Attribute Directive</strong> - responsible to add extra behavior to existing element
+                            - ngClass, ngStyle</li>
+                        <li><strong>Component </strong>- directive with a template</li>
+                        <li><strong>Custom Directive</strong> - you can create custom directive by cli command ng
+                            generate directive directive_name</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What is Structural Directive ?
+                </div>
+                <div class="card-body">
+                    <p>Structural Directive are responsible to chnage structure of DOM, means they can add or remove element from DOM or
+                         Create New Elements also. </p> 
+                </div>
+            </div>
+        </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    *ngIf Directive ?
+                </div>
+                <div class="card-body">
+                      <p>*ngIf => needs Boolean value if true will render element or it will remove. we can pass variable, comparsion or function as well</p>
+                     <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="ngiftsstr"></app-code-block>  
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="ngifstr"></app-code-block>  
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    *ngFor Directive ?
+                </div>
+                <div class="card-body">
+                      <p>*ngFor =>Helps to iterate on Array / Helps to create Dynamic Element</p>
+                     <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="ngFortsStr"></app-code-block>  
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="ngFothtmstr"></app-code-block>  
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    *ngSwitch Directive ?
+                </div>
+                <div class="card-body">
+                      <p>Render Element based on Multple conditions</p>
+                     <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="ngSwuttrstyr"></app-code-block>  
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="ngswichjhtmlstr"></app-code-block>  
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    How to Create Custom Directive
+                </div>
+                <div class="card-body">
+                      <p>According to requirment we Create Custom Directive with Our own set of rules and Behaviour</p>
+                     <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="highlstr"></app-code-block>  
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="numberonlyDirStr"></app-code-block>  
+                        </div>
+                         <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="tooltipDirStr"></app-code-block>  
+                        </div>
+                         <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                             <app-code-block [code]="rolbsedirstr"></app-code-block>  
+                        </div>
+                        
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    What is ElementRef in Angular?
+                </div>
+                <div class="card-body">
+                      <p>ElementRef allows you to interact you with dom Element, it gets you instance of DOM element.</p>
+                     <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                            <ul>
+                                <li>ElementRef is a wrapper around the native DOM element.</li>
+                                <li>It gives you direct access to the HTML element in your directive or component.</li>
+                                <li>You can change style, class, content, attributes,Read or modify element attributes</li>
+                                <li>What we do in JavaScript with Document.getElementById , some of it we can do with ElementRef</li>
+                            </ul>
+                        </div> 
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                   What is Renderer2?
+                </div>
+                <div class="card-body">
+                      <p>It's a serivice which allows you to manipulate  DOM</p>
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12"> 
+                            <ul>
+                                <li>setStyle -Set CSS styles (this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'red');)</li>
+                                <li>removeStyle, addClass,createElement, appendChild</li> 
+                            </ul>
+                        </div> 
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                  What is &#64;HostListener?
+                </div>
+                <div class="card-body">
+                      <p>allows you to listen to DOM events on the element where your directive or component </p>
+                     <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                            <ul>
+                                <li>whenever event happens on my host element, it execute method</li>
+                                <li>It's a decorator provided by Angular.</li>
+                                <li>Instead of manually adding event listeners (like addEventListener), Angular handles it for you safely and cleanly.</li> 
+                            </ul>
+                        </div> 
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6"> 
+                              <app-code-block [code]="hoststrtsr"></app-code-block>  
+                        </div> 
+                     </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                  purpose of trackBy in ngFor Directive
+                </div>
+                <div class="card-body">
+                      <p>trackBy option in *ngFor allows you to specify a function that Angular can use to track items by a unique identifier instead of relying on object reference identity. This identifier helps Angular keep track of which items have changed, been added, or been removed when the data changes. It improves performance, especially when dealing with large lists, by avoiding unnecessary re-rendering of DOM elements. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
