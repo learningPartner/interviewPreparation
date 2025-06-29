@@ -13,6 +13,9 @@ import { Angular18FeaturesComponent } from './pages/angular18-features/angular18
 import { UnitTestingComponent } from './pages/unit-testing/unit-testing.component';
 import { ComponentBasicComponent } from './pages/component/component-basic/component-basic.component';
 import { DirectiveExComponent } from './pages/directive-ex/directive-ex.component';
+import { HomeComponent } from './pages/interview/home/home.component';
+import { ProjectsComponent } from './pages/interview/projects/projects.component';
+import { VideoComponent } from './pages/interview/video/video.component';
 
 export const routes: Routes = [
     {
@@ -76,5 +79,28 @@ export const routes: Routes = [
     {
         path:"17-18-19-new-features",
         component:New17FeaturesComponent
+    },
+
+    // {
+    //     path: '',
+    //     redirectTo:'home',
+    //     pathMatch: 'full'
+    // },
+    {
+        path:'home',
+        component:HomeComponent,
+        title:'Home'
+    },
+    {
+        path:'projects',
+        component:ProjectsComponent,
+        title:'Youtube-Projects'
+    },
+    {
+        path:'video',
+        component:VideoComponent,
+        title:'Youtube Videos'
     }
+
+
 ];
